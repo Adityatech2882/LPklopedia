@@ -1,0 +1,108 @@
+@font-face {
+font-family: "LinkinPark";
+src: url("LinkinPark.ttf");
+}
+
+body {
+background-color: black;
+color: white;
+font-family: Arial;
+margin: 0;
+}
+
+.header {
+background-color: #111;
+padding: 15px;
+text-align: center;
+font-size: 26px;
+border-bottom: 2px solid red;
+font-family: "LinkinPark", Arial;
+}
+
+.menu {
+background-color: #222;
+padding: 10px;
+text-align: center;
+}
+
+.menu a {
+color: white;
+margin: 10px;
+text-decoration: none;
+}
+
+.menu a:hover {
+color: red;
+}
+
+.search-box {
+text-align: center;
+margin: 20px;
+}
+
+.search-box input {
+width: 60%;
+padding: 10px;
+font-size: 16px;
+background-color: #222;
+color: white;
+border: none;
+outline: none;
+}
+
+#results {
+width: 60%;
+margin: auto;
+background-color: #222;
+display: none;
+border: 1px solid #333;
+}
+
+.result-item {
+display: block;
+padding: 10px;
+color: white;
+text-decoration: none;
+border-bottom: 1px solid #333;
+}
+
+.result-item:hover {
+background-color: #444;
+}
+
+.card {
+text-decoration: none;
+color: white;
+display: block;
+}
+
+.content {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.box {
+background-color: #333;
+margin: 20px;
+padding: 15px;
+transition: 0.2s;
+}
+
+.card:hover .box {
+background-color: #444;
+transform: scale(1.01);
+cursor: pointer;
+}
+
+
+.artikel1,
+.artikel2 
+.artikel3{
+margin: 20px;
+}
+
+.logp {
+    font-family: "LinkinPark";
+    size: 100vh;
+}
