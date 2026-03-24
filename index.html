@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LPklopedia</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="header">LPklopedia - Linkin Park Encyclopedia</div>
+
+<div class="menu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="https://lpklopedia.boards.net/">Forum</a>
+</div>
+
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search info..." autocomplete="off">
+<div id="results"></div>
+</div>
+
+<a href="article.html" class="card searchable"> 
+<div class="box">
+<h2>Xero Demo Tape 2 1997</h2>
+<p>Click to see the full article...</p>
+</div>
+</a>
+
+<a href="article2.html" class="card searchable">
+<div class="box">
+<h2>Xero Demo Tape 1 1997</h2>
+<p>Click to see the full article...</p>
+</div>
+</a>
+
+<a href="article3.html" class="card searchable">
+<div class="box">
+<h2>Xero Demo A&R 1997</h2>
+<p>Click to see the full article...</p>
+</div>
+</a>
+
+<script>
+function searchArticle() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let results = document.getElementById("results");
+    let cards = document.getElementsByClassName("card");
+
+    results.innerHTML = "";
+
+    if (input === "") {
+        results.style.display = "none";
+
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].style.display = "block";
+        }
+        return;
+    }
+
+    let found = false;
+
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].querySelector("h2").innerText.toLowerCase();
+        let link = cards[i].getAttribute("href");
+
+        if (title.includes(input)) {
+            cards[i].style.display = "block";
+            found = true;
+
+            results.innerHTML += `
+                <a href="${link}" class="result-item">
+                    ${cards[i].querySelector("h2").innerText}
+                </a>
+            `;
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+
+    if (!found) {
+        results.innerHTML = "<div class='result-item'>Not found</div>";
+    }
+
+    results.style.display = "block";
+}
+
+document.getElementById("searchInput").addEventListener("keyup", searchArticle);
+</script>
+
+</body>
+</html>
